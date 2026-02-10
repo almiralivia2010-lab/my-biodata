@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Biodata | Almira Livia Rahma</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(135deg,#f6f0fa,#ffffff);
+  color:#333;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#7b4fa3;
+  padding:16px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  transition:background .4s ease;
+}
+
+header h2{
+  color:#fff;
+  font-weight:600;
+}
+
+.menu-btn{
+  font-size:24px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* MENU */
+.menu{
+  position:fixed;
+  top:70px;
+  right:25px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:.4s ease;
+}
+
+.menu.active{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.menu a{
+  display:block;
+  padding:14px 22px;
+  color:#7b4fa3;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.menu a:hover{
+  background:#f3e9fb;
+}
+
+/* SECTION */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:120px 25px 70px;
+  animation:fadeUp .9s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* PROFILE */
+.profile{
+  display:flex;
+  gap:30px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.profile img{
+  width:160px;
+  height:160px;
+  border-radius:20px;
+  object-fit:cover;
+  border:5px solid #d1b3ea;
+  cursor:pointer;
+  transition:.4s ease;
+}
+
+.profile img:hover{
+  transform:scale(1.05);
+}
+
+.profile h1{
+  color:#7b4fa3;
+}
+
+.profile p{
+  color:#9a7bbd;
+  margin-top:6px;
+}
+
+/* BIODATA */
+.biodata{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.box{
+  background:#fff;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.35s ease;
+}
+
+.box:hover{
+  transform:translateY(-6px);
+}
+
+/* ABOUT */
+.about{
+  margin-top:45px;
+  background:#ffffff;
+  padding:26px;
+  border-radius:20px;
+  line-height:1.9;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+/* CONTACT */
+.contact{
+  margin-top:35px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.contact a{
+  text-decoration:none;
+  padding:12px 28px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#b388eb,#e1bee7);
+  color:#4a148c;
+  transition:.35s ease;
+}
+
+.contact a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Almira</h2>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="menu" id="menu">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#biodata" onclick="toggleMenu()">Biodata</a>
+  <a href="#about" onclick="toggleMenu()">Tentang</a>
+  <a href="#contact" onclick="toggleMenu()">Kontak</a>
+</div>
+
+<input type="file" id="uploadFoto" hidden accept="image/*">
+
+<section id="home" class="profile">
+  <img src="https://via.placeholder.com/160" id="fotoProfil"
+       onclick="document.getElementById('uploadFoto').click()">
+  <div>
+    <h1>Almira Livia Rahma</h1>
+    <p>Pelajar SMK • Teknik Komputer dan Jaringan</p>
+  </div>
+</section>
+
+<section id="biodata">
+  <h2>Biodata</h2>
+  <div class="biodata">
+    <div class="box">Kelas: X TKJ A</div>
+    <div class="box">Sekolah: SMK HS Agung 3</div>
+    <div class="box">Hobi: Memasak</div>
+    <div class="box">Cita-cita: Dokter</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Tentang Saya</h2>
+  <div class="about">
+    Saya adalah siswi SMK jurusan Teknik Komputer dan Jaringan (TKJ).
+    Saya senang mempelajari hal baru dan tertarik dengan dunia teknologi.
+    Hobi memasak membantu saya melatih kesabaran dan kreativitas.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontak</h2>
+  <div class="contact">
+    <a href="#">WhatsApp</a>
+    <a href="#">Instagram</a>
+    <a href="#">Email</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Almira Livia Rahma
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+
+document.getElementById('uploadFoto').addEventListener('change',function(e){
+  const file=e.target.files[0];
+  if(file){
+    document.getElementById('fotoProfil').src=URL.createObjectURL(file);
+  }
+});
+</script>
+
+</body>
+</html>
